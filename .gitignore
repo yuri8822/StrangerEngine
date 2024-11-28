@@ -1,0 +1,57 @@
+# Ignore build directories
+/build/
+/build-*/
+
+# Ignore CMake generated files
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore Qt generated files
+*.moc
+*.qrc
+*.qmlc
+*.qrc.depends
+*.rcc
+*.uic
+
+# Ignore QtCreator specific files
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.creator.user
+*.creator.user.*
+*.creator.cmake
+*.creator.cmake.*
+*.creator.clang
+*.creator.clang.*
+
+# Ignore Visual Studio Code specific files
+.vscode/
+
+# Ignore MSYS2 specific files
+*.o
+*.obj
+*.dll
+*.exe
+*.a
+*.lib
+*.so
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.swn
+
+# Ignore user-specific files
+*.user
+*.user.*
+
+# Ignore generated documentation
+/docs/doxygen/html/
+/docs/doxygen/latex/
