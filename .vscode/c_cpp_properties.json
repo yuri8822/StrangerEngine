@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "MSYS2",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw64/include",
+                "C:/msys64/mingw64/include/Qt6",
+                "C:/msys64/mingw64/include/Qt6/QtWidgets",
+                "C:/msys64/mingw64/include/Qt6/QtCore",
+                "C:/msys64/mingw64/include/Qt6/QtGui",
+            ],
+            "defines": [],
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
