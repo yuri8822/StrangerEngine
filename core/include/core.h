@@ -1,6 +1,8 @@
 #ifndef CORE_H
 #define CORE_H
 
-void initializeCore();
+#include <SDL.h>
 
-#endif // CORE_H
+void initializeCore(SDL_Window* window);
+
+#endif

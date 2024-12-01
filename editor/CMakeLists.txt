@@ -1,16 +1,23 @@
 # Add the executable
 add_executable(editor
     src/main.cpp
-    src/mainwindow.cpp
-    include/mainwindow.h
 )
 
-# Link Qt and core library
-target_link_libraries(editor Qt6::Widgets core)
+# Link libraries
+target_link_libraries(editor
+    PRIVATE
+    ${SDL2_LIBRARIES}
+    OpenGL::GL
+    glad
+    imgui
+    core  # Link the core library
+)
 
-# Include directories for the editor executable
-target_include_directories(editor PUBLIC
-    ${Qt6Widgets_INCLUDE_DIRS}
+# Include directories
+target_include_directories(editor PRIVATE
+    ${SDL2_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/core/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/external/glad/include
+    ${CMAKE_SOURCE_DIR}/external/Imgui
+    ${CMAKE_SOURCE_DIR}/external/Imgui/backends
 )

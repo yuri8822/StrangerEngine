@@ -8,12 +8,12 @@ project(StrangerEngine VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Find the Qt library
-find_package(Qt6 COMPONENTS Widgets REQUIRED)
-
-# Enable AUTOMOC
-set(CMAKE_AUTOMOC ON)
+# Find packages
+find_package(OpenGL REQUIRED)
+find_package(SDL2 REQUIRED)
 
 # Add subdirectories
 add_subdirectory(core)
 add_subdirectory(editor)
+add_subdirectory(external/Imgui)
+add_subdirectory(external/glad)

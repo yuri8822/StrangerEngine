@@ -3,10 +3,11 @@
 /build-*/
 
 # Ignore CMake generated files
-CMakeFiles
+CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+compile_commands.json
 
 # Ignore Qt generated files
 *.moc
@@ -24,34 +25,28 @@ Makefile
 *.creator.user
 *.creator.user.*
 *.creator.cmake
-*.creator.cmake.*
-*.creator.clang
-*.creator.clang.*
 
-# Ignore Visual Studio Code specific files
+# Ignore Visual Studio Code settings and workspace files
 .vscode/
 
-# Ignore MSYS2 specific files
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
 *.o
 *.obj
-*.dll
-*.exe
-*.a
-*.lib
-*.so
 
-# Ignore log files and temporary files
-*.log
-*.tmp
-*.bak
-*.swp
-*.swo
-*.swn
-
-# Ignore user-specific files
-*.user
-*.user.*
-
-# Ignore generated documentation
-/docs/doxygen/html/
-/docs/doxygen/latex/
+# Ignore external dependencies
+external/
