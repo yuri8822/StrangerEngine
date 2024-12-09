@@ -1,16 +1,16 @@
 #include "renderer.h"
 #include <glad/glad.h>
 #include <SDL.h>
-#include <stdexcept>
+#include <iostream>
 
 void initializeRenderer(SDL_Window* window) {
     SDL_GLContext context = SDL_GL_CreateContext(window);
     if (!context) {
-        throw std::runtime_error("Failed to create OpenGL context");
+        std::cerr << "Failed to create OpenGL context" << std::endl;
     }
 
     if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress)) {
-        throw std::runtime_error("Failed to initialize GLAD");
+        std::cerr << "Failed to initialize GLAD" << std::endl;
     }
 
     // Set up OpenGL state

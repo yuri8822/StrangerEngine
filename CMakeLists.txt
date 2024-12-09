@@ -8,6 +8,10 @@ project(StrangerEngine VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Set SDL2 paths
+set(SDL2_PATH "C:/msys64/mingw64")
+set(CMAKE_MODULE_PATH "${SDL2_PATH}/share/cmake/Modules")
+
 # Find packages
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)

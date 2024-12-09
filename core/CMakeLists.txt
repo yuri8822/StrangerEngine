@@ -4,16 +4,8 @@ add_library(core
     src/renderer.cpp
 )
 
-# Set SDL2 paths
-set(SDL2_PATH "C:/msys64/mingw64")
-set(CMAKE_MODULE_PATH "${SDL2_PATH}/share/cmake/Modules")
-
-# Find SDL2 package
-find_package(SDL2 REQUIRED)
-
 # Link libraries
-target_link_libraries(core
-    PRIVATE
+target_link_libraries(core PRIVATE
     ${SDL2_LIBRARIES}
     OpenGL::GL
     glad

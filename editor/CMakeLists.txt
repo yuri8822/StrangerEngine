@@ -6,11 +6,8 @@ add_executable(editor
 # Link libraries
 target_link_libraries(editor
     PRIVATE
-    ${SDL2_LIBRARIES}
-    OpenGL::GL
-    glad
-    imgui
     core  # Link the core library
+    imgui
 )
 
 # Include directories
