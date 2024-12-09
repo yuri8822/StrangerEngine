@@ -47,6 +47,3 @@ compile_commands.json
 *.dylib
 *.o
 *.obj
-
-# Ignore external dependencies
-external/
