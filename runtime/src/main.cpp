@@ -1,7 +1,4 @@
 #include "core.h"
-#include <glad/glad.h>
-#include <SDL.h>
-#include <iostream>
 
 extern Core core;
 

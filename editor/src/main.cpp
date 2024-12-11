@@ -7,15 +7,18 @@
 extern Core core;
 
 // Callback function for SDL errors
-void sdl_error_callback(const char* description) {
+void sdl_error_callback(const char *description)
+{
     std::cerr << "SDL Error: " << description << std::endl;
 }
 
-void initializeImGui(SDL_Window* window, SDL_GLContext context) {
+void initializeImGui(SDL_Window *window, SDL_GLContext context)
+{
     // Initialize ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiIO &io = ImGui::GetIO();
+    (void)io;
     ImGui::StyleColorsDark();
 
     // Initialize ImGui for SDL and OpenGL
@@ -23,7 +26,8 @@ void initializeImGui(SDL_Window* window, SDL_GLContext context) {
     ImGui_ImplOpenGL3_Init("#version 130");
 }
 
-void renderImGui() {
+void renderImGui()
+{
     // Start the ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplSDL2_NewFrame();
@@ -39,16 +43,19 @@ void renderImGui() {
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 
     // Initialize ImGui
     initializeImGui(core.getRenderer()->window, core.getRenderer()->context);
 
     // Main loop
     bool done = false;
-    while (!done) {
+    while (!done)
+    {
         SDL_Event event;
-        while (SDL_PollEvent(&event)) {
+        while (SDL_PollEvent(&event))
+        {
             ImGui_ImplSDL2_ProcessEvent(&event);
             if (event.type == SDL_QUIT)
                 done = true;
@@ -60,7 +67,7 @@ int main(int argc, char *argv[]) {
         core.getRenderer()->renderScene();
 
         renderImGui();
-        
+
         // Swap buffers
         core.getRenderer()->swapBuffers();
     }
