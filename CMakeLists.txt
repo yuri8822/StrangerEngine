@@ -19,5 +19,6 @@ find_package(SDL2 REQUIRED)
 # Add subdirectories
 add_subdirectory(core)
 add_subdirectory(editor)
+add_subdirectory(runtime)
 add_subdirectory(external/imgui)
 add_subdirectory(external/glad)

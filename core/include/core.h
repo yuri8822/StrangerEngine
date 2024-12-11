@@ -1,5 +1,15 @@
 #pragma once
 
-#include <SDL.h>
+#include "renderer.h"
 
-void initializeCore(SDL_Window* window);
+class Core
+{
+private:
+    Renderer *renderer;
+
+public:
+    Core();
+    void run();
+    Renderer *getRenderer();
+    ~Core();
+};

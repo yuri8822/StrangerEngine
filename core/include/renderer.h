@@ -1,6 +1,17 @@
 #pragma once
 
 #include <SDL.h>
+#include <glad/glad.h>
+#include <iostream>
 
-void initializeRenderer(SDL_Window* window);
-void renderScene();
+class Renderer
+{
+public:
+    SDL_Window *window;
+    SDL_GLContext context;
+
+    Renderer();
+    void renderScene();
+    void swapBuffers();
+    ~Renderer();
+};
