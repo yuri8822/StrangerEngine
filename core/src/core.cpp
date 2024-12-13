@@ -1,5 +1,9 @@
 #include "core.h"
 
+// This is essentially the core of the core of my engine. It is responsible for maintaining the runtime of the game via:
+// the main loop
+// the input handling
+
 Core::Core()
 {
     renderer = new Renderer();
@@ -35,5 +39,5 @@ Core::~Core()
     delete renderer;
 }
 
-// Define the global instance of Core
+// Define the global instance of Core, this will be included using the extern keyword in all other files that require it
 Core core;

@@ -49,7 +49,9 @@ int main(int argc, char *argv[])
     // Initialize ImGui
     initializeImGui(core.getRenderer()->window, core.getRenderer()->context);
 
-    // Main loop
+    // This is the main loop of the editor, it is seperate from the main loop of the core. For now, when this main loop is running the core loop is not.
+    // I have a feeling that this will need to change later because even the editor should allow you to run the game (preview) while editing and 
+    // that will require the core main loop to run in tandem with the editor. A problem for later i guess.
     bool done = false;
     while (!done)
     {
@@ -69,7 +71,7 @@ int main(int argc, char *argv[])
         renderImGui();
 
         // Swap buffers
-        core.getRenderer()->swapBuffers();
+        core.getRenderer()->swapBuffers(); // Note: still need to understand how this works
     }
 
     // Cleanup
