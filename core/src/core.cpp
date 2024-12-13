@@ -1,9 +1,5 @@
 #include "core.h"
 
-// This is essentially the core of the core of my engine. It is responsible for maintaining the runtime of the game via:
-// the main loop
-// the input handling
-
 Core::Core()
 {
     renderer = new Renderer();
