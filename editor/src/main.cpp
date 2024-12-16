@@ -6,12 +6,6 @@
 
 extern Core core;
 
-// Callback function for SDL errors
-void sdl_error_callback(const char *description)
-{
-    std::cerr << "SDL Error: " << description << std::endl;
-}
-
 void initializeImGui(SDL_Window *window, SDL_GLContext context)
 {
     // Initialize ImGui context
@@ -65,9 +59,10 @@ int main(int argc, char *argv[])
                 done = true;
         }
 
-        // Render ImGui and the scene
+        // Render the scene:
         core.getRenderer()->renderScene();
 
+        // Render ImGui
         renderImGui();
 
         // Swap buffers
