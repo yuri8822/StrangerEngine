@@ -10,7 +10,7 @@ class Core
 {
 private:
     Renderer *renderer;
-    // soon to add other components as well:
+    // soon to add other components as well, IA:
     // audio
     // physics
     // entityComponentSystem

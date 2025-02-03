@@ -1,3 +1,13 @@
 #pragma once
+#include "components/Mesh.h"
 
-// will be making this system from scratch IA, so no need to include anything here
+// Fromm Scratch
+
+class ECS
+{
+private:
+
+public:
+    ECS();
+    ~ECS();
+};
