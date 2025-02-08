@@ -9,6 +9,7 @@ class FileManager
 private:
 public:
     FileManager();
+    void Demo_Load_3D_Models();
     void LoadFile();
     void SaveFile();
 };

@@ -1,5 +1,9 @@
 #pragma once
 
+#include "audio.h"
+#include "entityComponentSystem.h"
+#include "fileManager.h"
+#include "physics.h"
 #include "renderer.h"
 
 // This is essentially the main part of the core of my engine. It is responsible for maintaining the runtime of the game via:
@@ -9,11 +13,13 @@
 class Core
 {
 private:
-    Renderer *renderer;
-    // soon to add other components as well, IA:
+    // soon to add other components as well, IA.
+    
     // audio
+    ECS *ecs;
+    FileManager *fileManager;
     // physics
-    // entityComponentSystem
+    Renderer *renderer;
 
 public:
     Core();

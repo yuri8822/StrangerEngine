@@ -2,6 +2,10 @@
 
 Core::Core()
 {
+    // audio
+    ecs = new ECS();
+    fileManager = new FileManager();
+    // physics
     renderer = new Renderer();
 }
 void Core::run()
