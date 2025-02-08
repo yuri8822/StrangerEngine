@@ -1,4 +1,4 @@
-#include "entityComponentSystem.h"
+#include "core.h"
 
 ECS::ECS()
 {

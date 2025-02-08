@@ -1,6 +1,10 @@
 # Add the core library
 add_library(core
+    src/audio.cpp
     src/core.cpp
+    src/entityComponentSystem.cpp
+    src/fileManager.cpp
+    src/physics.cpp
     src/renderer.cpp
 )
 

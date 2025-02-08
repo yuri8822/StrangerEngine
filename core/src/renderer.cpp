@@ -1,4 +1,4 @@
-#include "renderer.h"
+#include "core.h"
 
 Renderer::Renderer() {
     // Initialize SDL

@@ -7,11 +7,13 @@
 class Entity
 {
 private:
-
-public:
     // every component needs to be listed here
     component_Transform *component_Transform;
     component_Mesh *component_Mesh;
+
+public:
+    Entity();
+    ~Entity();
 };
 
 // the ECS itself:
