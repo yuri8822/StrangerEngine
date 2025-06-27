@@ -47,3 +47,6 @@ compile_commands.json
 *.dylib
 *.o
 *.obj
+
+# Ignore Word generated files
+~*.docx
