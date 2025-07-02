@@ -5,11 +5,11 @@
 
 struct v
 {
-    float x;
-    float y;
-    float z;
+    double x;
+    double y;
+    double z;
 
-    v(float x, float y, float z)
+    v(double x, double y, double z)
     {
         this->x = x;
         this->y = y;
@@ -22,10 +22,10 @@ struct v
 };
 struct vt
 {
-    float x;
-    float y;
+    double x;
+    double y;
 
-    vt(float x, float y)
+    vt(double x, double y)
     {
         this->x = x;
         this->y = y;
@@ -37,11 +37,11 @@ struct vt
 };
 struct vn
 {
-    float x;
-    float y;
-    float z;
+    double x;
+    double y;
+    double z;
 
-    vn(float x, float y, float z)
+    vn(double x, double y, double z)
     {
         this->x = x;
         this->y = y;

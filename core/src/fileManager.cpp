@@ -55,26 +55,26 @@ void FileManager::Demo_Load_3D_Models()
         {
             data = line.substr(3, line.length());
 
-            float x = stof(split(data, ' '));
-            float y = stof(split(data, ' '));
-            float z = stof(split(data, ' '));
+            double x = stod(split(data, ' '));
+            double y = stod(split(data, ' '));
+            double z = stod(split(data, ' '));
             mesh->vertices.push_back(v(x, y, z));
         }
         else if (line.substr(0, 2) == "vn")
         {
             data = line.substr(3, line.length());
 
-            float x = stof(split(data, ' '));
-            float y = stof(split(data, ' '));
-            float z = stof(split(data, ' '));
+            double x = stod(split(data, ' '));
+            double y = stod(split(data, ' '));
+            double z = stod(split(data, ' '));
             mesh->normals.push_back(vn(x, y, z));
         }
         else if (line.substr(0, 2) == "vt")
         {
             data = line.substr(3, line.length());
 
-            float x = stof(split(data, ' '));
-            float y = stof(split(data, ' '));
+            double x = stod(split(data, ' '));
+            double y = stod(split(data, ' '));
             mesh->textures.push_back(vt(x, y));
         }
         else if (line.substr(0, 2) == "f ")
