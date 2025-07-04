@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// ~~~~~~~~~~~~~~~~~ Utility Functions:
+// ~~~~~~~~~~~~~~~~~ Utility Functions --- START
 string split(string &input, char delimiter)
 {
     size_t pos = input.find(delimiter);
@@ -17,16 +17,20 @@ string split(string &input, char delimiter)
         return input;
     }
 }
-// ~~~~~~~~~~~~~~~~~ Utility Functions;
+// ~~~~~~~~~~~~~~~~~ Utility Functions --- END
 
 FileManager::FileManager()
 {
     // Startup tasks of the File Manager when the Engine starts:
     Demo_Load_3D_Models();
+
+    cout << "File Manager Initialized" << endl;
 }
 
 void FileManager::Demo_Load_3D_Models()
 {
+    cout << "Running Demo_Load_3D_Models()" << endl;
+
     ifstream fin;
 
     string line;
@@ -39,13 +43,13 @@ void FileManager::Demo_Load_3D_Models()
 
     // debug:
     int count = 0;
-    int loopLimit = 10;
+    int lineLimit = 10;
     // debug;
 
     while (getline(fin, line)) 
     {
         // debug:
-        if (count >= loopLimit)
+        if (count >= lineLimit)
         {
             break;
         }

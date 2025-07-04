@@ -3,10 +3,10 @@
 Core::Core()
 {
     // audio
-    ecs = new ECS();
-    fileManager = new FileManager();
+    ecs = new ECS(); // entity component system
+    fileManager = new FileManager(); // file manager
     // physics
-    renderer = new Renderer();
+    renderer = new Renderer(); // renderer
 }
 void Core::run()
 {
