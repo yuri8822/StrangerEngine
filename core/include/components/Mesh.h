@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include "Component.h"
 
 struct v
 {
@@ -56,10 +57,15 @@ struct f
 {
 };
 
-struct component_Mesh
+struct component_Mesh : public Component
 {
     std::vector<v> vertices;
     std::vector<vt> textures;
     std::vector<vn> normals;
     std::vector<f> faces;
+
+    std::string Identifier() override
+    {
+        return "Mesh Component";
+    }
 };

@@ -1,15 +1,14 @@
 #include "core.h"
+
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
 // ~~~~~~~~~~~~~~~~~ Utility Functions --- START
-string split(string &input, char delimiter)
+std::string split(std::string &input, char delimiter)
 {
     size_t pos = input.find(delimiter);
-    string sub;
-    if (pos != string::npos) {
+    std::string sub;
+    if (pos != std::string::npos) {
         sub = input.substr(0, pos);
         input = input.substr(pos + 1, input.length());
         return sub;
@@ -24,18 +23,18 @@ FileManager::FileManager()
     // Startup tasks of the File Manager when the Engine starts:
     Demo_Load_3D_Models();
 
-    cout << "File Manager Initialized" << endl;
+    std::cout << "File Manager Initialized" << std::endl;
 }
 
 void FileManager::Demo_Load_3D_Models()
 {
-    cout << "Running Demo_Load_3D_Models()" << endl;
+    std::cout << "Running Demo_Load_3D_Models()" << std::endl;
 
-    ifstream fin;
+    std::ifstream fin;
 
-    string line;
+    std::string line;
 
-    string data;
+    std::string data;
 
     fin.open("../../assets/m4a1_s.obj");
 
@@ -98,6 +97,7 @@ void FileManager::LoadFile()
 
 }
 
+// This function will Save the entity instance into a ".strange file" using binary serialization
 void FileManager::SaveFile()
 {
     
