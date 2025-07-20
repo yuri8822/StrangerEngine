@@ -6,7 +6,6 @@
 
 class FileManager
 {
-private:
 public:
     FileManager();
     void Demo_Load_3D_Models();

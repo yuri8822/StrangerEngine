@@ -8,11 +8,14 @@ std::string split(std::string &input, char delimiter)
 {
     size_t pos = input.find(delimiter);
     std::string sub;
-    if (pos != std::string::npos) {
+    if (pos != std::string::npos)
+    {
         sub = input.substr(0, pos);
         input = input.substr(pos + 1, input.length());
         return sub;
-    } else {
+    }
+    else
+    {
         return input;
     }
 }
@@ -20,15 +23,20 @@ std::string split(std::string &input, char delimiter)
 
 FileManager::FileManager()
 {
+    logger.log("--(File Manager) Initializing:");
+    
     // Startup tasks of the File Manager when the Engine starts:
     Demo_Load_3D_Models();
 
-    std::cout << "File Manager Initialized" << std::endl;
+    logger.log("--(File Manager) Initialized");
 }
 
 void FileManager::Demo_Load_3D_Models()
 {
-    std::cout << "Running Demo_Load_3D_Models()" << std::endl;
+    logger.log("Running Demo_Load_3D_Models()");
+
+    std::string OBJ_File = "m4a1_s.obj";
+    std::string OBJ_Directory = "../../assets/";
 
     std::ifstream fin;
 
@@ -36,16 +44,16 @@ void FileManager::Demo_Load_3D_Models()
 
     std::string data;
 
-    fin.open("../../assets/m4a1_s.obj");
+    fin.open(OBJ_File + OBJ_Directory);
 
-    component_Mesh *mesh = new component_Mesh();    
+    component_Mesh *mesh = new component_Mesh();
 
     // debug:
     int count = 0;
     int lineLimit = 10;
     // debug;
 
-    while (getline(fin, line)) 
+    while (getline(fin, line))
     {
         // debug:
         if (count >= lineLimit)
@@ -82,7 +90,6 @@ void FileManager::Demo_Load_3D_Models()
         }
         else if (line.substr(0, 2) == "f ")
         {
-
         }
 
         count++;
@@ -90,15 +97,15 @@ void FileManager::Demo_Load_3D_Models()
 
     // Close the file
     fin.close();
+
+    logger.log("Successfully Loaded file: " + OBJ_File);
 }
 
 void FileManager::LoadFile()
 {
-
 }
 
 // This function will Save the entity instance into a ".strange file" using binary serialization
 void FileManager::SaveFile()
 {
-    
 }

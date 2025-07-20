@@ -2,9 +2,14 @@
 
 Core::Core()
 {
+    logger.isActive = true; // logging on or off
+
+    logger.log("Engine Started");
+
+    // =================== Module Initialization ===================
     // audio
-    ecs = new ECS(); // entity component system
     fileManager = new FileManager(); // file manager
+    ecs = new ECS(fileManager); // entity component system
     // physics
     renderer = new Renderer(); // renderer
 }
