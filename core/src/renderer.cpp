@@ -1,10 +1,17 @@
 #include "core.h"
 
-Renderer::Renderer()
+Renderer::Renderer() // Empty to pass "default constructor undefined" issue
 {
-    logger.log("--(Renderer) Initializing:");
+}
+
+Renderer::Renderer(ECS *ecs)
+{
+    logger.log("========================= [Renderer] Initializing:");
 
     // Startup tasks of the Renderer when the Engine starts:
+    this->ecs = ecs;
+    logger.log("ECS linked to Renderer");
+
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER) != 0)
     {
@@ -50,7 +57,7 @@ Renderer::Renderer()
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-    logger.log("--(Renderer) Initialized");
+    logger.log("************************* [Renderer] Initialized\n");
 }
 
 void Renderer::renderScene()

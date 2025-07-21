@@ -23,12 +23,12 @@ std::string split(std::string &input, char delimiter)
 
 FileManager::FileManager()
 {
-    logger.log("--(File Manager) Initializing:");
+    logger.log("========================= [File Manager] Initializing:");
     
     // Startup tasks of the File Manager when the Engine starts:
     Demo_Load_3D_Models();
 
-    logger.log("--(File Manager) Initialized");
+    logger.log("************************* [File Manager] Initialized\n");
 }
 
 void FileManager::Demo_Load_3D_Models()

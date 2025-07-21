@@ -129,13 +129,13 @@ ECS::ECS() // Empty to pass "default constructor undefined" issue
 
 ECS::ECS(FileManager *fileManager)
 {
-    logger.log("--(Entity Component System) Initializing:");
+    logger.log("========================= [Entity Component System] Initializing:");
 
     // Startup tasks of the ECS when the Engine starts:
     this->fileManager = fileManager;
     logger.log("File Manager linked to ECS");
 
-    logger.log("--(Entity Component System) Initialized");
+    logger.log("************************* [Entity Component System] Initialized\n");
 }
 
 int ECS::CreateEntity()
