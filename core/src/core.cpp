@@ -9,11 +9,11 @@ Core::Core()
     logger.log("----------------------------------------------------------------------\n");
 
     // =================== Module Initialization ===================
-    // audio
-    fileManager = new FileManager(); // file manager
-    ecs = new ECS(fileManager); // entity component system
-    // physics
-    renderer = new Renderer(ecs); // renderer
+    // audio = new Audio();
+    fileManager = new FileManager();
+    ecs = new ECS(fileManager);
+    // physicsEngine = new PhysicsEngine();
+    renderer = new Renderer(ecs);
 }
 void Core::run()
 {
@@ -44,6 +44,8 @@ Renderer *Core::getRenderer()
 Core::~Core()
 {
     delete renderer;
+    delete ecs;
+    delete fileManager;
 }
 
 // Define the global instance of Core, this will be included using the extern keyword in all other files that require it
