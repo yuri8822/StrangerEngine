@@ -9,9 +9,8 @@
 #include "logger.h"
 extern Logger logger;
 
-// This is essentially the main part of the core of my engine. It is responsible for maintaining the runtime of the game via:
-// the main loop
-// the input handling
+// This is the center of my engine. It is responsible for Initializing, Linking and Managing all of the modules of the engine
+// to then be used in the Runtime and/or Editor, as a library.
 
 class Core
 {
@@ -26,7 +25,6 @@ private:
 
 public:
     Core();
-    void run();
     Renderer *getRenderer();
     ~Core();
 };

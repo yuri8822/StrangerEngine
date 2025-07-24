@@ -1,9 +1,10 @@
-#include "core.h"
+#include "runtime.h"
 
-extern Core core;
+int main(int argc, char *argv[])
+{
+    Runtime runtime;
 
-int main(int argc, char *argv[]) {
-    core.run();
+    runtime.run();
 
     return 0;
 }

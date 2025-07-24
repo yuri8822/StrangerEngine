@@ -8,9 +8,7 @@ Editor::Editor()
 
 void Editor::run()
 {
-    // This is the main loop of the editor, it is seperate from the main loop of the core. For now, when this main loop is running the core loop is not.
-    // I have a feeling that this will need to change later because even the editor should allow you to run the game (preview) while editing and
-    // that will require the core main loop to run in tandem with the editor. A problem for later i guess.
+    // This is the main loop of the Editor, it is seperate from the main loop of the Runtime.
     bool done = false;
     while (!done)
     {

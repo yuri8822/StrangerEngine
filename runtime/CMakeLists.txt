@@ -1,6 +1,7 @@
 # Add the runtime executable
 add_executable(runtime
     src/main.cpp
+    src/runtime.cpp
 )
 
 # Link libraries
@@ -12,6 +13,7 @@ target_link_libraries(runtime
 # Include directories
 target_include_directories(runtime PRIVATE
     ${SDL2_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/runtime/include
     ${CMAKE_SOURCE_DIR}/core/include
     ${CMAKE_SOURCE_DIR}/external/glad/include
 )
