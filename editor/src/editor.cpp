@@ -3,39 +3,46 @@
 Editor::Editor()
 {
     // Initialize ImGui
-    initializeImGui(core.getRenderer()->window, core.getRenderer()->context);
+    InitializeImGui(core.getRenderer()->window, core.getRenderer()->context);
 }
 
-void Editor::run()
+void Editor::Update(bool &isDone)
+{
+    // Input Handling:
+    SDL_Event event;
+    while (SDL_PollEvent(&event))
+    {
+        ImGui_ImplSDL2_ProcessEvent(&event);
+        if (event.type == SDL_QUIT)
+            isDone = true;
+        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->window))
+            isDone = true;
+    }
+}
+
+void Editor::Run()
 {
     // This is the main loop of the Editor, it is seperate from the main loop of the Runtime.
-    bool done = false;
-    while (!done)
+    bool isDone = false;
+    while (!isDone)
     {
-        SDL_Event event;
-        while (SDL_PollEvent(&event))
-        {
-            ImGui_ImplSDL2_ProcessEvent(&event);
-            if (event.type == SDL_QUIT)
-                done = true;
-            if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->window))
-                done = true;
-        }
+        // Update Game State
+        Update(isDone);
 
         // Render the scene:
         core.getRenderer()->renderScene();
 
         // Render ImGui
-        renderImGui();
+        RenderImGui();
 
         // Swap buffers
         core.getRenderer()->swapBuffers(); // Note: still need to understand how this works
     }
 
-    cleanUp();
+    CleanUp();
 }
 
-void Editor::cleanUp()
+void Editor::CleanUp()
 {
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();
@@ -43,7 +50,7 @@ void Editor::cleanUp()
     ImGui::DestroyContext();
 }
 
-void Editor::initializeImGui(SDL_Window *window, SDL_GLContext context)
+void Editor::InitializeImGui(SDL_Window *window, SDL_GLContext context)
 {
     // Initialize ImGui context
     IMGUI_CHECKVERSION();
@@ -57,7 +64,7 @@ void Editor::initializeImGui(SDL_Window *window, SDL_GLContext context)
     ImGui_ImplOpenGL3_Init("#version 130");
 }
 
-void Editor::renderImGui()
+void Editor::RenderImGui()
 {
     // Start the ImGui frame
     ImGui_ImplOpenGL3_NewFrame();

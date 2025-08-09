@@ -10,11 +10,11 @@ extern Core core;
 class Editor
 {
 private:
-
 public:
     Editor();
-    void initializeImGui(SDL_Window *, SDL_GLContext);
-    void renderImGui();
-    void run();
-    void cleanUp();
+    void InitializeImGui(SDL_Window *, SDL_GLContext);
+    void RenderImGui();
+    void Update(bool &);
+    void Run();
+    void CleanUp();
 };

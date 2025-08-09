@@ -9,5 +9,6 @@ private:
 
 public:
     Runtime();
-    void run();
+    void Update(bool &);
+    void Run();
 };

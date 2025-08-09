@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
     Runtime runtime;
 
-    runtime.run();
+    runtime.Run();
 
     return 0;
 }
