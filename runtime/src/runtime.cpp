@@ -13,7 +13,7 @@ void Runtime::Update(bool &isDone)
     {
         if (event.type == SDL_QUIT)
             isDone = true;
-        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->window))
+        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->graphicsAPI->window))
             isDone = true;
     }
 }
@@ -28,9 +28,9 @@ void Runtime::Run()
         Update(isDone);
 
         // Render the scene:
-        core.getRenderer()->renderScene();
+        core.getRenderer()->Render();
 
         // Swap buffers
-        core.getRenderer()->swapBuffers(); // Note: still need to understand how this works
+        core.getRenderer()->graphicsAPI->SwapBuffers(); // Note: still need to understand how this works
     }
 }

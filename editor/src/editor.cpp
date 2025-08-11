@@ -3,7 +3,7 @@
 Editor::Editor()
 {
     // Initialize ImGui
-    InitializeImGui(core.getRenderer()->window, core.getRenderer()->context);
+    InitializeImGui(core.getRenderer()->graphicsAPI->window, core.getRenderer()->graphicsAPI->context);
 }
 
 void Editor::Update(bool &isDone)
@@ -15,7 +15,7 @@ void Editor::Update(bool &isDone)
         ImGui_ImplSDL2_ProcessEvent(&event);
         if (event.type == SDL_QUIT)
             isDone = true;
-        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->window))
+        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(core.getRenderer()->graphicsAPI->window))
             isDone = true;
     }
 }
@@ -30,13 +30,13 @@ void Editor::Run()
         Update(isDone);
 
         // Render the scene:
-        core.getRenderer()->renderScene();
+        core.getRenderer()->Render();
 
         // Render ImGui
         RenderImGui();
 
         // Swap buffers
-        core.getRenderer()->swapBuffers(); // Note: still need to understand how this works
+        core.getRenderer()->graphicsAPI->SwapBuffers(); // Note: still need to understand how this works
     }
 
     CleanUp();
