@@ -9,23 +9,6 @@ cmake_install.cmake
 Makefile
 compile_commands.json
 
-# Ignore Qt generated files
-*.moc
-*.qrc
-*.qmlc
-*.qrc.depends
-*.rcc
-*.uic
-
-# Ignore QtCreator specific files
-*.pro.user
-*.pro.user.*
-*.qbs.user
-*.qbs.user.*
-*.creator.user
-*.creator.user.*
-*.creator.cmake
-
 # Ignore Visual Studio Code settings and workspace files
 .vscode/
 
